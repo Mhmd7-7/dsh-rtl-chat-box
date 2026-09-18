@@ -1,0 +1,12 @@
+# Store every text file with LF in the repository, whatever platform a
+# contributor is on. Without this, Git for Windows' default `core.autocrlf`
+# rewrites line endings on checkout and every commit touches every line.
+* text=auto eol=lf
+
+# Binary assets (screenshots.json, if one is ever added, points at these).
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary

@@ -1,0 +1,62 @@
+{
+  "name": "dsh-rtl-chat-box",
+  "version": "0.1.0",
+  "description": "Right-to-left chat box for the dsh web GUI: switch the composer (and optionally message text) between Arabic-style RTL and LTR without touching the rest of the interface",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.1.5-rc.2": "compatible"
+      }
+    }
+  },
+  "license": "MIT",
+  "author": "Mhmd7-7",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "plugin",
+    "rtl",
+    "ltr",
+    "chat",
+    "i18n",
+    "arabic",
+    "bidi",
+    "deepseek",
+    "deepseek-harness"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mhmd7-7/dsh-rtl-chat-box.git"
+  },
+  "homepage": "https://github.com/Mhmd7-7/dsh-rtl-chat-box#readme",
+  "bugs": {
+    "url": "https://github.com/Mhmd7-7/dsh-rtl-chat-box/issues"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}

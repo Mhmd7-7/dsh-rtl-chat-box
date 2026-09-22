@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-09-22
+
+### Added
+
+- **The question and its answers now follow the mode.** 0.2.0 gave the *text*
+  inside an `ask_user_question` card a direction of its own, but the card itself
+  had none, so an Arabic question still laid out left-to-right with its option
+  numbers on the left. The card now takes one direction of its own — forced by
+  **RTL** / **LTR**, computed from its own text in **Auto** — and that turns the
+  whole card around: the header actions move to the other edge, an option row lays
+  its number, label and description out from the other edge, and the footer swaps
+  its buttons. The direction is re-read whenever the card's text changes, so a
+  card rewritten in another language follows it.
+- The answer field follows what is typed in every mode: Arabic right-to-left,
+  English left-to-right.
+
+### Fixed
+
+- **An empty answer field left an Arabic card's placeholder on the left.**
+  `dir="auto"` has no strong character to read in an empty field and falls back to
+  LTR; while the placeholder is showing, the field now takes the card's direction
+  instead.
+- A question detail's list keeps its 18px indent but gains it on the marker's own
+  side, so a right-to-left card no longer draws its number outside the indent —
+  and a horizontal scrollbar of the card body with it (measured: 4px of overflow).
+
 ## [0.2.0] - 2026-09-22
 
 ### Added
@@ -64,7 +90,8 @@ First public release.
 - `dsh.bundle.patch` + `cordis.patch.yml` make the package installable through
   `dsh plugin --profile web add`.
 
-[Unreleased]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/releases/tag/v0.1.0

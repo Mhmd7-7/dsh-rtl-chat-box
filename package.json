@@ -1,6 +1,6 @@
 {
   "name": "dsh-rtl-chat-box",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Right-to-left chat box for the dsh web GUI: switch the composer (and optionally message text) between Arabic-style RTL and LTR without touching the rest of the interface",
   "type": "module",
   "main": "lib/index.js",

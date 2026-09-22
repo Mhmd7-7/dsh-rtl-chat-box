@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-22
+
+### Added
+
+- **A direction button in the question card.** The card is the one surface where a
+  direction can be wrong for a reason the mode cannot know: a reply in Arabic
+  arrives, the mode is **RTL**, and this one question is in English. The card's
+  header now carries a small **RTL** / **LTR** button that reports the direction the
+  card has at that moment and swaps it for the other one on a click, so the question,
+  its options and its answer field turn around without leaving the card. It corrects
+  that card alone: the transcript, the composer and the settings row keep the mode
+  they were given, and the choice lives in memory rather than in the stored
+  preference — it is a correction applied to the question in front of you, not a
+  setting. The button sits with the card's own minimise and close buttons, stays
+  single across the GUI's re-renders, and is removed when the plugin is disposed.
+
 ## [0.3.0] - 2026-09-22
 
 ### Added
@@ -90,7 +106,8 @@ First public release.
 - `dsh.bundle.patch` + `cordis.patch.yml` make the package installable through
   `dsh plugin --profile web add`.
 
-[Unreleased]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.0...v0.1.1

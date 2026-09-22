@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-22
+
+### Fixed
+
+- **List markers in Auto follow the item's own language.** A `::marker` with
+  `list-style-position: inside` is placed by the item's `direction` property,
+  which `unicode-bidi: plaintext` never changes, so an Arabic item's number could
+  stay on the left. In Auto, every `li` in the transcript and in the composer that
+  has no `dir` of its own is now given `dir="auto"`, and a `MutationObserver`
+  covers items added later (a new message, or Enter inside the editor). Leaving
+  Auto — or unloading the plugin — removes only the `dir` values the plugin wrote,
+  never one the editor set itself.
+
 ## [0.1.0] - 2026-09-18
 
 First public release.
@@ -35,5 +48,6 @@ First public release.
 - `dsh.bundle.patch` + `cordis.patch.yml` make the package installable through
   `dsh plugin --profile web add`.
 
-[Unreleased]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Mhmd7-7/dsh-rtl-chat-box/releases/tag/v0.1.0
